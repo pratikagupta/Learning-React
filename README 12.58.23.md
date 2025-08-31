@@ -1,4 +1,3 @@
-
 ## Coding :
 
 - Set up all the `tools in your laptop`
@@ -38,3 +37,52 @@ What is making your app fast ? - It is react and bundler(Parcel)
 - Diffrent dev and prod bundles
 
 https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
+
+- React Element => Object => HTML Element (render)
+- JSX => React.createElement => Object => HTML Element (render)
+
+- JSX - JavaScript XML
+- JSX is not HTML, it is similar to HTML
+- JSX is type of syntactic sugar over React.createElement() function
+
+- Babel is a JS compiler which converts JSX to React.createElement() function
+
+- Babel CDN - https://unpkg.com/@babel/standalone/babel.min.js
+
+- Babel REPL - https://babeljs.io/repl
+
+- JSX Rules
+ 1. Top level element must be single
+ 2. Use className instead of class
+ 3. Use htmlFor instead of for
+ 4. Camel case for attribute names - onClick, tabIndex, contentEditable
+ 5. Close every element properly - <input />
+ 6. JS expression in JSX using {}
+ 7. Comments in JSX - {/* */}
+
+- React Functional Component
+- It is a JS function which returns JSX
+- Component name must start with capital letter
+- Component must be pure function - It should not have any side effects, it should return same output for same input
+- Component must follow composition - A component can return another component
+
+- React createElement => ReactELEMENT Object => HTMLElEMENT (render)
+
+-  JSX - HTML-like syntax or XML-like syntax
+- Babel converts JSX to React.createElement => Object => HTMLElEMENT (render)
+
+- JSX(Transpiled code before it reaches the JS engine) - Pracel - Babel - JS engine
+- Babel is a JS compiler which converts JSX to JS
+- JSX =>  => ReactELEMENT Object => HTMLElEMENT (render)
+
+- React Component - Functional Component
+- Component name always starts with Capital letter
+- Component is a function which returns JSX
+- If you have to give attribute in JSX - you have to use camel case
+
+- React Component
+ 1. Class based component - old way
+ 2. Functional component - new way
+
+- React Functional component - Return some JSX code
+- Component Composition
