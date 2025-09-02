@@ -49,3 +49,4 @@ You should pass a single object from the array, not the whole array.
 Problem: You passed an array where your component expected an object.
 
 Solution: Pass a single object (resObj[0]) or loop over the array (map) to render multiple cards.
+
