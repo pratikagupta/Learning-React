@@ -86,3 +86,20 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 
 - React Functional component - Return some JSX code
 - Component Composition
+
+
+- props = When you have to dynamiclly passin some data to a componets you pass in propr 
+
+- confi-driven UI
+
+* What is Config-driven-UI -> A "config-driven UI" is a user interface that is built and configured using a declarative configuration file or data structure, rather than being hardcoded.
+
+* Every company now-a-days follows these approach, because our Appications need to be Dynamic These Days
+
+* Note: A Good Senior Frontend engineer is - who is a good UI Layer Engineer and a good Data Layer Engineer
+
+- Image cloudinary Image
+- Resuseable components
+- CDN
+- Whenever you are .map, Whenever you are looping anything we have to always give key
+- not using keys (not acceptable) <<<< index as key <<<<<<<< unique id (best part)
