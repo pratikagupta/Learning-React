@@ -98,8 +98,69 @@ https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 
 * Note: A Good Senior Frontend engineer is - who is a good UI Layer Engineer and a good Data Layer Engineer
 
+/** Food Ordering App Structure Driven app
+ * Header
+ * - Logo
+ * - Nav Items
+ * - Cart
+ * Body
+ * - Search bar
+ * - Restaurant list
+ * - Restaurant Card
+ *    - Image
+ *    - Name
+ *    - Rating
+ *    - Cusines
+ * Footer
+ * - Copyright
+ * - Contact us
+ * - Address    
+ * - Links
+ */
+
 - Image cloudinary Image
 - Resuseable components
 - CDN
 - Whenever you are .map, Whenever you are looping anything we have to always give key
 - not using keys (not acceptable) <<<< index as key <<<<<<<< unique id (best part)
+
+<RestaurantCard resData={resList[0]} />
+
+- React HOOKS
+
+
+Two types of Export/Import
+
+- Default Export/Import
+
+export default Component;
+import Component from "path";
+
+- Nmaed Export/Import
+
+export const Component;
+import {Component} from "path";
+
+Can we use defalt export along with a name export?
+
+React is fast in DOM manupulation
+React is efficient in DOM manupulation
+
+State variable - super powerful variable
+
+
+# React hooks 
+
+* React Hook -> A normal JavaScript function which is given to us by React (or) Normal JS utility functions
+
+(Normal JS utility function)
+- usestate() - superpowerful State 
+- useeffects()
+
+Utility function - 
+1. useState - Super Powerful variable
+Whenever state variable updates raect render its components
+
+React use reconsitional algo (React Fiber)
+
+Dif Algo, Virtual DOM
