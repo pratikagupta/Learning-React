@@ -174,3 +174,9 @@ Load -> Render -> API -> Render
 What is Parameter and Arguments ?
 
 CORS
+
+- Conditional Rendering
+
+- Jargen
+
+* Whenever a state variable updates or changes, react triggers a reconciliation cycle(re-renders the component)
