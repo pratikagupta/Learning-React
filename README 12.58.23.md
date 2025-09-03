@@ -163,4 +163,14 @@ Whenever state variable updates raect render its components
 
 React use reconsitional algo (React Fiber)
 
-Dif Algo, Virtual DOM
+Virtual DOM
+
+Dis Algo - UI layer and Data layer in sync
+
+Separation of consern, single responsiblity principle
+
+Load -> Render -> API -> Render
+
+What is Parameter and Arguments ?
+
+CORS

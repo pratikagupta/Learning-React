@@ -50,3 +50,35 @@ Problem: You passed an array where your component expected an object.
 
 Solution: Pass a single object (resObj[0]) or loop over the array (map) to render multiple cards.
 
+
+🚨 Issue in Swiggy API
+
+You followed a tutorial where:
+
+Restaurants were at json.data.cards[2]
+
+Each restaurant used resData.data
+
+But in the current Swiggy API:
+
+Restaurants are at json.data.cards[4]
+
+Each restaurant uses resData.info
+
+deliveryTime is now inside sla.deliveryTime
+
+Because of this mismatch → your UI showed a blank screen.
+
+✅ Fix
+
+Correct state setter → used setListOfRestaurants (plural).
+
+Correct JSON path →
+
+json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+
+
+Correct destructuring →
+
+const { name, cuisines, avgRating, costForTwo, sla } = resData.info;
+

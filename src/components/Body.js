@@ -1,82 +1,55 @@
-import { useState } from 'react';
 import RestaurantCard from './RestaurantCard';
-import resList from '../utils/mockData';
+import { useEffect, useState } from 'react';
+import Shimmer from './Shimmer';
 
 const Body = () => {
-  // * React Hook -> A normal JavaScript function which is given to us by React (or) Normal JS utility functions
-  // * useState() - Super Powerful variable
-  // * useEffect() -
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-  // * State variable - Super Powerful variable
-  const [listOfRestaurants, setListOfRestaurants] = useState(resList);
+  useEffect(() => {
+    console.log('useEffect called');
+    fetchData();
+  }, []);
 
-  // * Normal JS variable
-  // const listOfRestaurants = [
-  //   {
-  //     type: 'restaurant',
-  //     data: {
-  //       id: '334475',
-  //       name: 'KFC',
-  //       cloudinaryImageId: 'bdcd233971b7c81bf77e1fa4471280eb',
-  //       cuisines: ['Burgers', 'Biryani', 'American', 'Snacks', 'Fast Food'],
-  //       costForTwo: 40000,
-  //       deliveryTime: 36,
-  //       avgRating: '3.8',
-  //     },
-  //   },
-  //   {
-  //     type: 'restaurant',
-  //     data: {
-  //       id: '334476',
-  //       name: 'Dominos',
-  //       cloudinaryImageId: 'bdcd233971b7c81bf77e1fa4471280eb',
-  //       cuisines: ['Burgers', 'Biryani', 'American', 'Snacks', 'Fast Food'],
-  //       costForTwo: 40000,
-  //       deliveryTime: 36,
-  //       avgRating: '4.8',
-  //     },
-  //   },
-  //   {
-  //     type: 'restaurant',
-  //     data: {
-  //       id: '334477',
-  //       name: 'McDonals',
-  //       cloudinaryImageId: 'bdcd233971b7c81bf77e1fa4471280eb',
-  //       cuisines: ['Burgers', 'Biryani', 'American', 'Snacks', 'Fast Food'],
-  //       costForTwo: 40000,
-  //       deliveryTime: 36,
-  //       avgRating: '4.2',
-  //     },
-  //   },
-  // ];
+  const fetchData = async () => {
+    try {
+      const data = await fetch(
+        'https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
+      );
+      const json = await data.json();
+      console.log("API Response:", json);
 
-  return (
+      // ✅ Correct path for restaurants
+      const restaurants =
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+
+      setListOfRestaurants(restaurants);
+      setFilteredRestaurants(restaurants);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
-      {/* <div className="search-container">
-        <input type="text" placeholder="Search Food or Restaurant" />
-        <button>Search</button>
-      </div> */}
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
-            // * Filter logic
             const filteredList = listOfRestaurants.filter(
-              (res) => res.data.avgRating > 4
+              (res) => res.info?.avgRating > 4
             );
-
-            setListOfRestaurants(filteredList);
-            console.log(filteredList);
+            setFilteredRestaurants(filteredList);
           }}
         >
           Top Rated Restaurants
         </button>
       </div>
       <div className="res-container">
-        {/* // * looping through the <RestaurentCard /> components Using Array.map() method */}
-
-        {listOfRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+        {filteredRestaurants.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
