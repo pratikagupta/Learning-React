@@ -180,3 +180,5 @@ CORS
 - Jargen
 
 * Whenever a state variable updates or changes, react triggers a reconciliation cycle(re-renders the component)
+
+Re-consilatiom

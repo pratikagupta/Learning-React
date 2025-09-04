@@ -82,3 +82,15 @@ Correct destructuring →
 
 const { name, cuisines, avgRating, costForTwo, sla } = resData.info;
 
+ChatGPT said:
+
+Here’s the summary of API issue :
+
+Earlier Swiggy API returned restaurant details inside data.
+
+Now the new API returns restaurant details inside info.
+
+Your code was still using res.data.*, so it broke (undefined).
+
+Fix → replace all res.data with res.info (e.g., res.info.name, res.info.avgRating).
+
