@@ -181,4 +181,10 @@ CORS
 
 * Whenever a state variable updates or changes, react triggers a reconciliation cycle(re-renders the component)
 
-Re-consilatiom
+Re-consilation
+
+If no dependency array => useeffect is called on every render
+
+If dependecy array is effect = [] => useEffect is called on initial render (just once)
+
+React Router DOM
