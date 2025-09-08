@@ -188,3 +188,18 @@ If no dependency array => useeffect is called on every render
 If dependecy array is effect = [] => useEffect is called on initial render (just once)
 
 React Router DOM
+
+Link DOM 
+
+* if no dependency array => useEffect is called on every component render of the component
+* if the dependency array is empty => useEffect is called only on the initial render(just once) of the component
+* if the dependency array contains a dependency => useEffect is called everytime the value of the depencecy changes
+* Dependency: A depency can be a state variable (or) a function
+
+Refreshing Components. 
+
+Two types of routing - 
+1. Client side routing
+2. Server side routing
+
+Dynamic Routing

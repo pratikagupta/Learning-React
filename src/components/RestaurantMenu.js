@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import Shimmer from './Shimmer';
+import Shimmer from './Shimmer';
 import ShimmerMenu from './ShimmerMenu';
 import { CDN_URL } from '../utils/constants';
 import { MENU_API } from '../utils/constants';
-import { FiClock } from 'react-icons/fi';
-import { AiOutlineStar } from 'react-icons/ai';
+// import { FiClock } from 'react-icons/fi';
+// import { AiOutlineStar } from 'react-icons/ai';
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
