@@ -1,10 +1,11 @@
 import RestaurantCard from './RestaurantCard';
 import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer';
+import { Link } from 'react-router-dom';
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState('');
     // * Whenever a state variable updates or changes, react triggers a reconciliation cycle(re-renders the component)
@@ -28,7 +29,7 @@ const Body = () => {
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
       setListOfRestaurants(restaurants);
-      setFilteredRestaurants(restaurants);
+      setFilteredRestaurant(restaurants);
     } 
 
   // Conditional Rendering
@@ -83,8 +84,19 @@ const Body = () => {
         </button>
         </div>
       <div className="res-container">
-        {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+        {/* // * looping through the <RestaurentCard /> components Using Array.map() method */}
+
+        {filteredRestaurant.map((restaurant) => (
+          <Link
+            style={{
+              textDecoration: 'none',
+              color: '#000',
+            }}
+            key={restaurant.data.id}
+            to={'/restaurants/' + restaurant.data.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

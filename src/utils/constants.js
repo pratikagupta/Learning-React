@@ -3,4 +3,4 @@ export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_l
 export const LOGO_URL = "https://i.pinimg.com/474x/84/4d/85/844d8535fb36b860d3a16635ef20fbab.jpg"
 
 export const MENU_API =
-  'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.1969425&lng=78.14673379999999&restaurantId=84714&catalog_qa=undefined&submitAction=ENTER';
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.1969425&lng=78.14673379999999&restaurantId="
